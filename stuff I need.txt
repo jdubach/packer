@@ -1,0 +1,17 @@
+sudo apt update && sudo apt upgrade -y
+
+timedatectl set-timezone America/Los_Angeles
+
+sed -i 's/#NTP=/NTP=pool.ntp.org/g' /etc/systemd/timesyncd.conf 
+
+sudo apt-get install neofetch
+
+sudo bash -c $'echo "neofetch" >> /etc/profile.d/mymotd.sh && chmod +x /etc/profile.d/mymotd.sh'
+
+sudo chmod -x /etc/update-motd.d/*
+
+sudo rm /usr/share/neofetch/ascii/distro/ubuntu
+
+touch /usr/share/neofetch/ascii/distro/ubuntu
+
+
